@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types'; 
-import {Wrapper, Infos, InfosData, InfosText} from "../styles/keyDataStyle";
+import "../styles.css";
 
 /** display icon with user infos 
  * @param  {string} icon
@@ -11,13 +11,13 @@ import {Wrapper, Infos, InfosData, InfosText} from "../styles/keyDataStyle";
  export default function KeyData({icon,info,text}) {
      
     return (  
-    <Wrapper>
+    <div className='keydata-wrapper'>
         <img src={icon} alt="calories icon"/>
-        <Infos>
-            <InfosData>{info}</InfosData>
-            <InfosText>{text}</InfosText>
-        </Infos>
-    </Wrapper> );
+        <div className='keydata-infos'>
+            <div className='InfosData'>{info}</div>
+            <div className='InfosText'>{text}</div>
+        </div>
+    </div> );
 }
 
 KeyData.propTypes = {

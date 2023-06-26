@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Container, Title } from "../styles/userAverageSessionStyle";
+import "../styles.css";
 import { getData } from '../utils/getData';
 import { useParams } from "react-router";
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip } from "recharts";
-import SessionsToolType from "./SessionsToolType.js";
+import SessionsToolType from "./SessionsToolType.jsx";
 
 
 /**
@@ -48,8 +48,8 @@ import SessionsToolType from "./SessionsToolType.js";
   if (data.length === 0) return null;
 
   return (
-    <Container>
-      <Title>Durée moyenne des sessions</Title>
+    <div className="session-container">
+      <div className="session-title">Durée moyenne des sessions</div>
       <ResponsiveContainer width="100%" height="100%">
         <LineChart data={data} strokeWidth={1} 
              onMouseMove={(e) => {
@@ -88,6 +88,6 @@ import SessionsToolType from "./SessionsToolType.js";
           />
         </LineChart>
       </ResponsiveContainer>
-    </Container>
+    </div>
   );
 }

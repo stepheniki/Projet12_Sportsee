@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import Error from "./pages/Error";
 import User from "./pages/User";
 
-export default function App() {
+export default function ReactRoutes() {
     
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>

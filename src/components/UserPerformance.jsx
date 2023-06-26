@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react';
-import { Container } from "../styles/userPerformanceStyle";
+import "../styles.css";
 import { getData } from '../utils/getData';
 import { useParams } from 'react-router';
 import {Radar,RadarChart,PolarGrid,PolarAngleAxis,ResponsiveContainer} from "recharts";
@@ -45,7 +45,7 @@ import {Radar,RadarChart,PolarGrid,PolarAngleAxis,ResponsiveContainer} from "rec
 	if (data.length === 0) return null;
 	
     return ( 
-    <Container>
+    <div className='container-performance'>
             <ResponsiveContainer width="100%" height="100%">
 				<RadarChart cx='50%' cy='50%' outerRadius='65%' data={data}>
 						<PolarGrid gridType="polygon" />
@@ -53,7 +53,7 @@ import {Radar,RadarChart,PolarGrid,PolarAngleAxis,ResponsiveContainer} from "rec
 						<Radar dataKey='value' stroke='#FF0101'	fill='#FF0101' fillOpacity={0.7} />
 				</RadarChart>
             </ResponsiveContainer>
-    </Container> );
+    </div> );
 }
 
  

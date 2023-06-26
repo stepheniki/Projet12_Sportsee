@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types'; 
-import {Head, Name} from "../styles/userInfosStyle";
+import  "../styles.css";
 
 /**Render the userName
 * @param {string} name
@@ -10,10 +10,10 @@ import {Head, Name} from "../styles/userInfosStyle";
 export default function UserInfos({name}) {
 
     return (  
-          <Head>
-            <h1>Bonjour <Name>{name}</Name></h1>
+          <div className='user-header'>
+            <h1>Bonjour <span className='user-name'>{name}</span></h1>
             <span>Félicitation ! Vous avez explosé vos objectifs hier 👏</span>
-          </Head>
+          </div>
     );
 }
 

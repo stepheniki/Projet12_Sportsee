@@ -1,5 +1,5 @@
 import React from "react";
-import {Container, Title, Text, Score} from "../styles/scoreChartStyle"
+import  "../styles.css"
 import { ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
 import PropTypes from "prop-types";
 
@@ -16,8 +16,8 @@ import PropTypes from "prop-types";
   ];
 
   return (
-    <Container>
-      <Title>Score</Title>
+    <div className="scoreCharts-container">
+      <div className="scoreCharts-title">Score</div>
       <ResponsiveContainer width="100%" height="100%">
         <PieChart>
           <Pie
@@ -37,14 +37,14 @@ import PropTypes from "prop-types";
           </Pie>
         </PieChart>
       </ResponsiveContainer>
-      <Text>
-        <Score>
+      <div className="scoreCharts-text">
+        <div className="scoreCharts-score">
           {score[0].value * 100}%<br />
-        </Score>
+        </div>
         de votre
         <br /> objectif
-      </Text>
-    </Container>
+      </div>
+    </div>
   );
 }
 

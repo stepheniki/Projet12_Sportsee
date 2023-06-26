@@ -1,5 +1,5 @@
 import React from 'react';
-import {Wrapper, Head, Title, Text, Icon, Legend, Info} from "../styles/barChartStyle";
+import "../styles.css";
 import { useState,useEffect } from 'react';
 import { getData } from '../utils/getData';
 import { useParams } from 'react-router';
@@ -31,20 +31,20 @@ import ActivityToolType from './ActivityToolType';
         {data[i].day = i + 1;}
     
     return (  
-        <Wrapper>
-            <Head>
-                <Title>Activité quotidienne</Title>
-                <Legend>
-					<Info>
-						<Icon color='#282D30' />
-						<Text>Poids (kg)</Text>
-					</Info>
-					<Info>
-						<Icon color='#E60000' />
-						<Text>Calories brûlées (kCal)</Text>
-					</Info>
-				</Legend>
-            </Head>
+        <div className='activity-wrapper'>
+            <div className='activity-head'>
+                <div className='activity-title'>Activité quotidienne</div>
+                <div className='activity-legend'>
+					<div className='activity-info'>
+						<div className='activity-icon-black' color='#282D30' />
+						<p>Poids (kg)</p>
+					</div>
+					<div className='activity-info'>
+						<div className='activity-icon-red' color='#E60000' />
+						<p>Calories brûlées (kCal)</p>
+					</div>
+				</div>
+            </div>
             <ResponsiveContainer  height={200} >
                 <BarChart data={data} barGap={8} barCategoryGap={1}>
                     <CartesianGrid vertical={false} strokeDasharray="1 1"/>
@@ -56,7 +56,7 @@ import ActivityToolType from './ActivityToolType';
                     <Bar yAxisId="calories" dataKey="calories" fill="#E60000" barSize={7} radius={[50, 50, 0, 0]}/>
                 </BarChart>
             </ResponsiveContainer>
-        </Wrapper>
+        </div>
     );
 }
 

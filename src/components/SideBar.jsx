@@ -4,14 +4,14 @@ import iconBike from "../assets/iconBike.svg";
 import iconSwiming from "../assets/iconSwiming.svg";
 import iconDumbBell from "../assets/iconDumbBell.svg";
 import { NavLink } from "react-router-dom";
-import { Container, Nav, Wrapper, NavText } from "../styles/sideBarStyle";
+import  "../styles.css";
 
 export default function SideBar(){
     
   return (
-    <Container>
-      <Nav>
-        <Wrapper>
+    <div className="sidebar-container">
+      <div className="sidebar-nav">
+        <div className="sidebar-wrapper">
           <NavLink to="#">
             <img src={iconMeditation} alt="Meditation" />
           </NavLink>
@@ -24,10 +24,10 @@ export default function SideBar(){
           <NavLink to="#">
             <img src={iconDumbBell} alt="Dumb-Bell" />
           </NavLink>
-        </Wrapper>
-        <NavText>Copyright, SportSee 2020</NavText>
-      </Nav>
-    </Container>
+        </div>
+        <div className="sidebar-copyright">Copyright, SportSee 2020</div>
+      </div>
+    </div>
   );
 };
 

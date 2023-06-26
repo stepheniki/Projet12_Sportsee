@@ -1,14 +1,14 @@
 import React from "react";
-import {Container, Text} from "../styles/sessionsToolTypeStyle";
+import  "../styles.css";
 import PropTypes from "prop-types";
 
 export default function SessionsToolType({ active, payload }) {
     
   if (active) {
     return (
-      <Container>
-        <Text>{payload[0].value}min</Text>
-      </Container>
+      <div className="tooltip-container">
+        <div className="tooltip-text">{payload[0].value}min</div>
+      </div>
     );
   }
   return null;

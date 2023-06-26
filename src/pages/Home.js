@@ -1,15 +1,15 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { Main, Title } from "../styles/homeStyle";
+import "../styles.css";
 
 export default function Home (){
     
   return (
-    <Main>
-      <Title>Select USER</Title>
+    <div className="main-style">
+      <div className="main-title">Sélectionnez un utilisateur</div>
       <NavLink to="user/12">👦 Karl </NavLink>
       <NavLink to="user/18">👩 Cecilia </NavLink>
-    </Main>
+    </div>
   );
 };
 

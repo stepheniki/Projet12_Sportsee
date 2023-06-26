@@ -4,7 +4,7 @@ import { getData } from "../utils/getData";
 import { useParams } from "react-router";
 import SideBar from "../components/SideBar";
 import UserInfos from "../components/UserInfos";
-import {Main, Container, Content, BottomChart} from "../styles/userStyle";
+import  "../styles.css";
 import caloriesIcon from "../assets/calories-icon.svg";
 import proteinsIcon from "../assets/proteines-icon.svg";
 import glucidesIcon from "../assets/glucides-icon.svg";
@@ -34,18 +34,18 @@ import UserPerformance from "../components/UserPerformance";
   if (data.length === 0) return null;
 
   return (
-    <Main>
+    <div className="user-main">
       <SideBar />
-      <Container>
+      <div className="user-container">
       <UserInfos name={data.userInfos.firstName} />
-      <Content>
+      <div className="user-content">
           <section>
             <BarCharts />
-            <BottomChart>
+            <div className="bottom-chart">
               <UserAverageSessions />
               <UserPerformance />
               <ScoreChart data={data} />
-            </BottomChart>
+            </div>
           </section>
           <aside>
             <KeyData
@@ -69,8 +69,8 @@ import UserPerformance from "../components/UserPerformance";
               text="Lipides"
             />
           </aside>
-        </Content>
-      </Container>
-    </Main>
+        </div>
+      </div>
+    </div>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, Text} from "../styles/activityToolTypeStyle";
+import "../styles.css";
 import PropTypes from 'prop-types';
 
 
@@ -12,10 +12,10 @@ import PropTypes from 'prop-types';
  export default function ActivityToolType({active, payload}) {
     if (active){
     return (
-        <Container>
-            <Text>{payload[0].value}kg</Text>
-            <Text>{payload[1].value}Kcal</Text>
-        </Container>
+        <div className="container-activity-tooltip">
+            <p>{payload[0].value}kg</p>
+            <p>{payload[1].value}Kcal</p>
+        </div>
     
      );
     }
