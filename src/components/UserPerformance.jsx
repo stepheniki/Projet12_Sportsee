@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react';
 import "../styles.css";
-import { getData } from '../utils/getData';
+import { getData } from '../datas/getData';
 import { useParams } from 'react-router';
 import {Radar,RadarChart,PolarGrid,PolarAngleAxis,ResponsiveContainer} from "recharts";
 

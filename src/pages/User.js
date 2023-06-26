@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { getData } from "../utils/getData";
+import { getData } from "../datas/getData";
 import { useParams } from "react-router";
 import SideBar from "../components/SideBar";
 import UserInfos from "../components/UserInfos";
@@ -18,8 +18,11 @@ import UserPerformance from "../components/UserPerformance";
 /**Render the dashboard
  * @return {JSX}
  */
+
+
  export default function User() {
-     
+  
+
   const [data, setData] = useState([]);
   const { id } = useParams();
   
@@ -32,6 +35,29 @@ import UserPerformance from "../components/UserPerformance";
     data();
   }, [id]);
   if (data.length === 0) return null;
+
+  const keyData = [
+    {
+      icon: caloriesIcon,
+      info: `${data.keyData.calorieCount}kCal`,
+      text: "Calories",
+    },
+    {
+      icon: proteinsIcon,
+      info: `${data.keyData.proteinCount}g`,
+      text: "Proteines",
+    },
+    {
+      icon: glucidesIcon,
+      info: `${data.keyData.carbohydrateCount}g`,
+      text: "Glucides",
+    },
+    {
+      icon: lipidesIcon,
+      info: `${data.keyData.lipidCount}g`,
+      text: "Lipides",
+    },
+  ];
 
   return (
     <div className="user-main">
@@ -48,27 +74,10 @@ import UserPerformance from "../components/UserPerformance";
             </div>
           </section>
           <aside>
-            <KeyData
-              icon={caloriesIcon}
-              info={`${data.keyData.calorieCount}kCal`}
-              text="Calories"
-            />
-            <KeyData
-              icon={proteinsIcon}
-              info={`${data.keyData.proteinCount}g`}
-              text="Proteines"
-            />
-            <KeyData
-              icon={glucidesIcon}
-              info={`${data.keyData.carbohydrateCount}g`}
-              text="Glucides"
-            />
-            <KeyData
-              icon={lipidesIcon}
-              info={`${data.keyData.lipidCount}g`}
-              text="Lipides"
-            />
-          </aside>
+    {keyData.map((item,index) => (
+      <KeyData key={index} icon={item.icon} info={item.info} text={item.text} />
+    ))}
+  </aside>
         </div>
       </div>
     </div>

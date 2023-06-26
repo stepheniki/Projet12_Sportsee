@@ -1,16 +1,29 @@
 import React from 'react';
 import "../styles.css";
 import { useState,useEffect } from 'react';
-import { getData } from '../utils/getData';
+import { getData } from '../datas/getData';
 import { useParams } from 'react-router';
 import {BarChart,Bar,XAxis,YAxis,CartesianGrid,Tooltip, ResponsiveContainer} from "recharts";
-import ActivityToolType from './ActivityToolType';
+import PropTypes from 'prop-types';
 
+// custom tooltip
+function ActivityToolType({active, payload}) {
+    if (active){
+    return (
+        <div className="container-activity-tooltip">
+            <p>{payload[0].value}kg</p>
+            <p>{payload[1].value}Kcal</p>
+        </div>
+    
+     );
+    }
+    return null
+}
 
-/**
- * Render a BarChart with user activity Data
- * @return {JSX}
- */
+ActivityToolType.propTypes = {
+	active: PropTypes.bool,
+	payload: PropTypes.array,
+};
  export default  function BarCharts() {
 
     const [data, setData] = useState([]);
