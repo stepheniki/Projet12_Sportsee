@@ -3,15 +3,26 @@ import "../styles.css";
 import { getData } from '../utils/getData';
 import { useParams } from "react-router";
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip } from "recharts";
-import SessionsToolType from "./SessionsToolType.jsx";
+import PropTypes from "prop-types";
 
+// tooltip
+function SessionsToolType({ active, payload }) {
+  if (active) {
+    return (
+      <div className="tooltip-container">
+        <div className="tooltip-text">{payload[0].value}min</div>
+      </div>
+    );
+  }
+  return null;
+}
 
-/**
- * Render a LineChart with user average sessions Data
- * @return {JSX}
- */
+SessionsToolType.propTypes = {
+  active: PropTypes.bool,
+  payload: PropTypes.array,
+};
 
- export default function UserAverageSessions() { 
+export default function UserAverageSessions() {
      
   const [data, setData] = useState([]);
   const { id } = useParams();
@@ -54,7 +65,7 @@ import SessionsToolType from "./SessionsToolType.jsx";
         <LineChart data={data} strokeWidth={1} 
              onMouseMove={(e) => {
                 if (e.isTooltipActive === true) {
-                  let div = document.querySelector('.bUPtxZ')
+                  let div = document.querySelector('.session-container')
                   let windowWidth = div.clientWidth
                   let mouseXpercentage = Math.round(
                     (e.activeCoordinate.x / windowWidth) * 100
