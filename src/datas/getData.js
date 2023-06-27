@@ -1,6 +1,8 @@
 // Importation des fonctions depuis le fichier dataMocked
-import { getUserActivity,getUserAverageSessions, getUserInfos, getUserPerformance, } from "./dataMocked";
+import { getUserActivity,getUserAverageSessions, getUserInfos, getUserPerformance, } from "./dataMocked"; // .apiCall pour basculer
 
+
+//
 /**
  * Fonction asynchrone pour obtenir des données en fonction du type et de l'ID fournis
  * @param {string} type - Le type de données à obtenir

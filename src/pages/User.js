@@ -14,6 +14,7 @@ import ScoreChart from "../components/ScoreChart";
 import KeyData from "../components/KeyData";
 import UserAverageSessions from "../components/UserAverageSession";
 import UserPerformance from "../components/UserPerformance";
+import ModelisationClass from "../modelisationClass";
 
 /**Render the dashboard
  * @return {JSX}
@@ -36,28 +37,8 @@ import UserPerformance from "../components/UserPerformance";
   }, [id]);
   if (data.length === 0) return null;
 
-  const keyData = [
-    {
-      icon: caloriesIcon,
-      info: `${data.keyData.calorieCount}kCal`,
-      text: "Calories",
-    },
-    {
-      icon: proteinsIcon,
-      info: `${data.keyData.proteinCount}g`,
-      text: "Proteines",
-    },
-    {
-      icon: glucidesIcon,
-      info: `${data.keyData.carbohydrateCount}g`,
-      text: "Glucides",
-    },
-    {
-      icon: lipidesIcon,
-      info: `${data.keyData.lipidCount}g`,
-      text: "Lipides",
-    },
-  ];
+  let modelisationClass = new ModelisationClass ();
+  let dataTable = modelisationClass.keyData(caloriesIcon, proteinsIcon, glucidesIcon, lipidesIcon, data.keyData);
 
   return (
     <div className="user-main">
@@ -74,7 +55,7 @@ import UserPerformance from "../components/UserPerformance";
             </div>
           </section>
           <aside>
-    {keyData.map((item,index) => (
+    {dataTable.map((item,index) => (
       <KeyData key={index} icon={item.icon} info={item.info} text={item.text} />
     ))}
   </aside>

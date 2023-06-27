@@ -73,3 +73,5 @@ export const getUserAverageSessions = async (id) => {
     console.log(e);
   }
 };
+
+//const get ... = get export
