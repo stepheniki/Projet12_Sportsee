@@ -264,63 +264,70 @@ const USER_PERFORMANCE = [
 
 
 /**
- * Get user infos
- *
- * @param {number} id User id
- * @returns {object} Response
+ * Récupération des informations de l'utilisateur
+ * @param {number} id - L'ID de l'utilisateur
+ * @returns {object} - Réponse contenant les informations de l'utilisateur
  */
- export const getUserInfos = async (id) => {
-	try {
-		const res = USER_MAIN_DATA.find((el) => el.id == id);
-		return {data:res};
-	} catch (e) {
-		console.log(e);
-	}
-};
-
-
-/**
- * Get user activity 
- *
- * @param {number} id User id
- * @returns {object} Response
- */
-export const getUserActivity = async (id) => {
-	try {
-		const res = USER_ACTIVITY.find((el) => el.userId == id);
-		return {data:res};
-	} catch (e) {
-		console.log(e);
-	}
-};
-
-/**
- * Get user average session 
- *
- * @param {number} id User id
- * @returns {object} Response
- */
-export const getUserAverageSessions = async (id) => {
-	try {
-		const res = USER_AVERAGE_SESSIONS.find((el) => el.userId == id);
-		return {data:res};
-	} catch (e) {
-		console.log(e);
-	}
-};
-
-/**
- * Get user performance 
- *
- * @param {number} id User id
- * @returns {object} Response
- */
-export const getUserPerformance = async (id) => {
-	try {
-		const res = USER_PERFORMANCE.find((el) => el.userId == id);
-		return {data:res};
-	} catch (e) {
-		console.log(e);
-	}
-};
-
+export const getUserInfos = async (id) => {
+    try {
+      // Recherche des informations de l'utilisateur dans les données USER_MAIN_DATA en utilisant la méthode find
+      const res = USER_MAIN_DATA.find((el) => el.id == id);
+      // Renvoi des données trouvées sous forme d'objet avec une propriété data
+      return { data: res };
+    } catch (e) {
+      // En cas d'erreur, affichage de l'erreur dans la console
+      console.log(e);
+    }
+  };
+  
+  /**
+   * Récupération de l'activité de l'utilisateur
+   * @param {number} id - L'ID de l'utilisateur
+   * @returns {object} - Réponse contenant les données d'activité de l'utilisateur
+   */
+  export const getUserActivity = async (id) => {
+    try {
+      // Recherche des données d'activité de l'utilisateur dans les données USER_ACTIVITY en utilisant la méthode find
+      const res = USER_ACTIVITY.find((el) => el.userId == id);
+      // Renvoi des données trouvées sous forme d'objet avec une propriété data
+      return { data: res };
+    } catch (e) {
+      // En cas d'erreur, affichage de l'erreur dans la console
+      console.log(e);
+    }
+  };
+  
+  /**
+   * Récupération des sessions moyennes de l'utilisateur
+   * @param {number} id - L'ID de l'utilisateur
+   * @returns {object} - Réponse contenant les sessions moyennes de l'utilisateur
+   */
+  export const getUserAverageSessions = async (id) => {
+    try {
+      // Recherche des sessions moyennes de l'utilisateur dans les données USER_AVERAGE_SESSIONS en utilisant la méthode find
+      const res = USER_AVERAGE_SESSIONS.find((el) => el.userId == id);
+      // Renvoi des données trouvées sous forme d'objet avec une propriété data
+      return { data: res };
+    } catch (e) {
+      // En cas d'erreur, affichage de l'erreur dans la console
+      console.log(e);
+    }
+  };
+  
+  /**
+   * Récupération des performances de l'utilisateur
+   * @param {number} id - L'ID de l'utilisateur
+   * @returns {object} - Réponse contenant les performances de l'utilisateur
+   */
+  export const getUserPerformance = async (id) => {
+    try {
+      // Recherche des performances de l'utilisateur dans les données USER_PERFORMANCE en utilisant la méthode find
+      const res = USER_PERFORMANCE.find((el) => el.userId == id);
+      // Renvoi des données trouvées sous forme d'objet avec une propriété data
+      return { data: res };
+    } catch (e) {
+      // En cas d'erreur, affichage de l'erreur dans la console
+      console.log(e);
+    }
+  };
+  
