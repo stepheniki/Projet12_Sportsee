@@ -1,68 +1,81 @@
 // Importation de la bibliothèque axios pour effectuer des requêtes HTTP
 import axios from "axios";
 
+import { getUserActivity as getMockedUserActivity } from './dataMocked.js';
+import { getUserAverageSessions as getMockedUserAverageSessions } from './dataMocked.js';
+import { getUserInfos as getMockedUserInfos } from './dataMocked.js';
+import { getUserPerformance as getMockedUserPerformance } from './dataMocked.js';
+
+// utiliser les données provenant d’un appel API (avec dataSource = 'api')
+let dataSource = 'mocked';
+
+
 // Création d'une instance d'axios avec une URL de base
 const api = axios.create({
   baseURL: `http://localhost:3000/`
 });
 
-/**
- * Récupération de l'activité de l'utilisateur
- * @param {string} id - L'ID de l'utilisateur
- * @returns {Array} - Les données d'activité de l'utilisateur
- */
+
+
+// Modification des fonctions pour récupérer les données de l’utilisateur 
+// elles vérifient la valeur de la variable dataSource 
+// utilisent les données mockées ou les données provenant de l’API en fonction de sa valeur.
 export const getUserActivity = async (id) => {
+  if (dataSource === 'mocked') {
+
+    return getMockedUserActivity(id);
+  } else {
   try {
-    // Requête GET à l'API pour obtenir les données d'activité de l'utilisateur
     const res = await api.get(`http://localhost:3000/user/${id}/activity`);
-    // Renvoi des données obtenues
     return res.data;
   } catch (e) {
-    // En cas d'erreur, affichage de l'erreur dans la console
     console.log(e);
   }
+}
 };
 
-/**
- * Récupération des informations de l'utilisateur
- * @param {string} id - L'ID de l'utilisateur
- * @returns {object} - Les informations de l'utilisateur
- */
+
+// Modification des fonctions pour récupérer les données de l’utilisateur 
+// elles vérifient la valeur de la variable dataSource 
+// utilisent les données mockées ou les données provenant de l’API en fonction de sa valeur.
 export const getUserInfos = async (id) => {
-  try {
-    // Requête GET à l'API pour obtenir les informations de l'utilisateur
-    const res = await api.get(`http://localhost:3000/user/${id}`);
-    // Renvoi des données obtenues
-    return res.data;
-  } catch (e) {
-    // En cas d'erreur, affichage de l'erreur dans la console
-    console.log(e);
+  console.log(dataSource);
+
+  if (dataSource === 'mocked') {
+    return getMockedUserInfos(id);
+  } else {
+    try {
+      const res = await api.get(`http://localhost:3000/user/${id}`);
+      return res.data;
+    } catch (e) {
+      console.log(e);
+    }
   }
 };
 
-/**
- * Récupération des performances de l'utilisateur
- * @param {string} id - L'ID de l'utilisateur
- * @returns {object} - Les performances de l'utilisateur
- */
+// Modification des fonctions pour récupérer les données de l’utilisateur 
+// elles vérifient la valeur de la variable dataSource 
+// utilisent les données mockées ou les données provenant de l’API en fonction de sa valeur.
 export const getUserPerformance = async (id) => {
+  if (dataSource === 'mocked') {
+    return getMockedUserPerformance(id);
+  } else {
   try {
-    // Requête GET à l'API pour obtenir les performances de l'utilisateur
     const res = await api.get(`http://localhost:3000/user/${id}/performance`);
-    // Renvoi des données obtenues
     return res.data;
   } catch (e) {
-    // En cas d'erreur, affichage de l'erreur dans la console
     console.log(e);
   }
+}
 };
 
-/**
- * Récupération des sessions moyennes de l'utilisateur
- * @param {string} id - L'ID de l'utilisateur
- * @returns {object} - Les sessions moyennes de l'utilisateur
- */
+// Modification des fonctions pour récupérer les données de l’utilisateur 
+// elles vérifient la valeur de la variable dataSource 
+// utilisent les données mockées ou les données provenant de l’API en fonction de sa valeur.
 export const getUserAverageSessions = async (id) => {
+  if (dataSource === 'mocked') {
+    return getMockedUserAverageSessions(id);
+  } else {
   try {
     // Requête GET à l'API pour obtenir les sessions moyennes de l'utilisateur
     const res = await api.get(`http://localhost:3000/user/${id}/average-sessions`);
@@ -72,6 +85,8 @@ export const getUserAverageSessions = async (id) => {
     // En cas d'erreur, affichage de l'erreur dans la console
     console.log(e);
   }
+}
 };
+
 
 //const get ... = get export

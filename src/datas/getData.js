@@ -1,5 +1,5 @@
 // Importation des fonctions depuis le fichier dataMocked
-import { getUserActivity,getUserAverageSessions, getUserInfos, getUserPerformance, } from "./dataMocked"; // .apiCall pour basculer
+import { getUserActivity, getUserAverageSessions, getUserInfos, getUserPerformance, } from "./ApiCall"; // .apiCall pour basculer
 
 
 //
@@ -12,7 +12,7 @@ import { getUserActivity,getUserAverageSessions, getUserInfos, getUserPerformanc
 export const getData = async (type, id) => {
   let data = [];
   // Utilisation d'une instruction switch pour appeler différentes fonctions en fonction de la valeur de type
-  switch (type) {
+    switch (type) {
     case "USER_ACTIVITY":
       // Appel de la fonction getUserActivity avec l'ID fourni
       data = await getUserActivity(id);
