@@ -1,5 +1,5 @@
 // Importation des fonctions depuis le fichier dataMocked
-import { getUserActivity, getUserAverageSessions, getUserInfos, getUserPerformance, } from "./ApiCall"; // .apiCall pour basculer
+import { getUserActivity, getUserAverageSessions, getUserInfos, getUserPerformance, } from "./ApiCall"; 
 
 
 //

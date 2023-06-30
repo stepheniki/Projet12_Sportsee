@@ -7,7 +7,10 @@ import { getUserInfos as getMockedUserInfos } from './dataMocked.js';
 import { getUserPerformance as getMockedUserPerformance } from './dataMocked.js';
 
 // utiliser les données provenant d’un appel API (avec dataSource = 'api')
+// utiliser les données provenant d’un appel de données mockées (avec dataSource = 'mocked')
+
 let dataSource = 'mocked';
+console.log(dataSource);
 
 
 // Création d'une instance d'axios avec une URL de base
@@ -39,7 +42,6 @@ export const getUserActivity = async (id) => {
 // elles vérifient la valeur de la variable dataSource 
 // utilisent les données mockées ou les données provenant de l’API en fonction de sa valeur.
 export const getUserInfos = async (id) => {
-  console.log(dataSource);
 
   if (dataSource === 'mocked') {
     return getMockedUserInfos(id);
@@ -89,4 +91,3 @@ export const getUserAverageSessions = async (id) => {
 };
 
 
-//const get ... = get export
