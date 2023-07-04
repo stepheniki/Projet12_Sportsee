@@ -2,12 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types'; 
 import "../styles.css";
 
-/** display icon with user infos 
- * @param  {string} icon
- * @param  {string} info
- * @param  {string} text
- * @return {JSX}
- */
+
  export default function KeyData({icon,info,text}) {
      
     return (  

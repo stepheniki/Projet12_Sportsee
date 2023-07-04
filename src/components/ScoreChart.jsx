@@ -4,10 +4,7 @@ import { ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
 import PropTypes from "prop-types";
 
 
-/** create a PieChart with score value
- * @param  {object} {data}
- * @return {JSX}
- */
+
  export default function ScoreChart({ data }) {
      
   const score = [

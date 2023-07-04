@@ -1,9 +1,20 @@
 export default class ModelisationClass {
-    keyData (caloriesIcon, proteinsIcon, glucidesIcon, lipidesIcon, keyData) {
-        let dataTable = [
+    
+  
+  
+  keyData (caloriesIcon, proteinsIcon, glucidesIcon, lipidesIcon, keyData) {
+       
+    
+    function formatNumberWithCommas(number) {
+      return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+    
+    
+    
+    let dataTable = [
             {
               icon: caloriesIcon,
-              info: `${keyData.calorieCount}kCal`,
+              info: `${formatNumberWithCommas(keyData.calorieCount)}kCal`,
               text: "Calories",
             },
             {

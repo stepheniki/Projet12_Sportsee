@@ -76,13 +76,15 @@ export default function UserAverageSessions() {
               }}
         >
           <XAxis
-            type="category"
-            dataKey="day"
-            tickLine={true}
-            stroke="red"
-            padding={{right:5, left:5}}
-            tick={{ fontSize: 13, stroke: "white", opacity: 0.8}}
-          />
+    type="category"
+    dataKey="day"
+    tickLine={false} // enlever repères de l'axe horizontal
+    axisLine={false} // enlever ligne axe horizontal
+    stroke="red"
+    padding={{right:5, left:5}}
+    tick={{ fontSize: 12, stroke: "white", opacity: 0.8}}
+
+/>
           <YAxis
             dataKey="sessionLength"
             domain={[0, "dataMax + 30"]}
