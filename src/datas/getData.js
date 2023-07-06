@@ -2,13 +2,6 @@
 import { getUserActivity, getUserAverageSessions, getUserInfos, getUserPerformance, } from "./ApiCall"; 
 
 
-//
-/**
- * Fonction asynchrone pour obtenir des données en fonction du type et de l'ID fournis
- * @param {string} type - Le type de données à obtenir
- * @param {number} id - L'ID de l'utilisateur pour lequel obtenir les données
- * @returns {Array} - Les données obtenues
- */
 export const getData = async (type, id) => {
   let data = [];
   // Utilisation d'une instruction switch pour appeler différentes fonctions en fonction de la valeur de type
@@ -33,3 +26,5 @@ export const getData = async (type, id) => {
   // Renvoi des données obtenues sous forme de tableau
   return data;
 };
+
+

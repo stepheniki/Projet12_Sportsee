@@ -280,11 +280,7 @@ export const getUserInfos = async (id) => {
     }
   };
   
-  /**
-   * Récupération de l'activité de l'utilisateur
-   * @param {number} id - L'ID de l'utilisateur
-   * @returns {object} - Réponse contenant les données d'activité de l'utilisateur
-   */
+  
   export const getUserActivity = async (id) => {
     try {
       // Recherche des données d'activité de l'utilisateur dans les données USER_ACTIVITY en utilisant la méthode find
@@ -297,11 +293,7 @@ export const getUserInfos = async (id) => {
     }
   };
   
-  /**
-   * Récupération des sessions moyennes de l'utilisateur
-   * @param {number} id - L'ID de l'utilisateur
-   * @returns {object} - Réponse contenant les sessions moyennes de l'utilisateur
-   */
+  
   export const getUserAverageSessions = async (id) => {
     try {
       // Recherche des sessions moyennes de l'utilisateur dans les données USER_AVERAGE_SESSIONS en utilisant la méthode find
@@ -314,11 +306,7 @@ export const getUserInfos = async (id) => {
     }
   };
   
-  /**
-   * Récupération des performances de l'utilisateur
-   * @param {number} id - L'ID de l'utilisateur
-   * @returns {object} - Réponse contenant les performances de l'utilisateur
-   */
+  
   export const getUserPerformance = async (id) => {
     try {
       // Recherche des performances de l'utilisateur dans les données USER_PERFORMANCE en utilisant la méthode find

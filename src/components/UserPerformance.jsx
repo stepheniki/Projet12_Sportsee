@@ -7,7 +7,7 @@ import {Radar,RadarChart,PolarGrid,PolarAngleAxis,ResponsiveContainer,Text,Polar
 
 
 
- export default function UserPerformance() {
+export default function UserPerformance() {
 // gérer l'espace entre le graphique et le texte
 	function renderPolarAngleAxis({ payload, x, y, cx, cy, ...rest }) {
 		return (

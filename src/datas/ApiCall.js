@@ -9,7 +9,7 @@ import { getUserPerformance as getMockedUserPerformance } from './dataMocked.js'
 // utiliser les données provenant d’un appel API (avec dataSource = 'api')
 // utiliser les données provenant d’un appel de données mockées (avec dataSource = 'mocked')
 
-let dataSource = 'mocked';
+let dataSource = 'api';
 console.log(dataSource);
 
 
