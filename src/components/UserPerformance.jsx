@@ -64,10 +64,14 @@ export default function UserPerformance() {
 	
     return ( 
     <div className='container-performance '>
-            <ResponsiveContainer width="100%" height="100%">
-				<RadarChart cx='50%' cy='50%' outerRadius='65%' data={data}>
-						<PolarGrid gridType="polygon" radialLines={false} />
-						<PolarAngleAxis
+      <ResponsiveContainer width="100%" height="100%">
+		<RadarChart cx='50%' cy='50%' outerRadius='65%' data={data}>
+
+	{/* Grille polaire */}
+	<PolarGrid gridType="polygon" radialLines={false} />
+
+     {/* Axe des angles polaires avec étiquettes personnalisées */}
+	<PolarAngleAxis
     dataKey="kind"
     stroke="white"
     tickLine={false}
@@ -76,10 +80,13 @@ export default function UserPerformance() {
 	// gérer l'espace entre le grapique et le texte
     tick={props => renderPolarAngleAxis(props)}
 />
-						<Radar dataKey='value' stroke='#FF0101'	fill='#FF0101' fillOpacity={0.7} />
-						{/* nombre de polygones dans le graphique  */}
-						<PolarRadiusAxis tickCount={5} tick={false} axisLine={false} />
-				</RadarChart>
+   {/* Radar : représentation graphique des données */}
+	<Radar dataKey='value' stroke='#FF0101'	fill='#FF0101' fillOpacity={0.7} />
+
+	{/* nombre de polygones dans le graphique  */}
+	<PolarRadiusAxis tickCount={5} tick={false} axisLine={false} />
+				
+		</RadarChart>
             </ResponsiveContainer>
     </div> );
 }

@@ -58,15 +58,31 @@ ActivityToolType.propTypes = {
 					</div>
 				</div>
             </div>
+              {/* Utilisation de BarChart pour créer le graphique à barres */}
             <ResponsiveContainer  height={200} >
                 <BarChart data={data} barGap={8} barCategoryGap={1}>
+
+                    {/* Grille cartésienne sans lignes verticales */}
                     <CartesianGrid vertical={false} strokeDasharray="1 1"/>
+                   
+                    {/* Axe X représentant les jours */}
                     <XAxis dataKey="day" tickLine={false} tick={{fontSize: 14}} dy={15} stroke="1 1"/>
+                   
+                    {/* Axe Y pour les kilogrammes (à droite) */}
                     <YAxis yAxisId="kilogram" dataKey="kilogram" type="number" domain={['dataMin - 2', 'dataMax + 1']} tickCount="4" axisLine={false} orientation="right" tickLine={false} tick={{fontSize: 14}} dx={15}/>
+                    
+                    {/* Axe Y pour les calories (caché) */}
                     <YAxis yAxisId="calories" dataKey="calories" type="number" domain={['dataMin - 20', 'dataMax + 10']}  hide={true}/>
+                    
+                    {/* Tooltip personnalisé pour afficher les valeurs */}
                     <Tooltip content={<ActivityToolType/>}/>
-                    <Bar yAxisId="kilogram" dataKey="kilogram" fill="#282D30" barSize={7} radius={[50, 50, 0, 0]}/>
+                    
+                    {/* Barres pour les kilogrammes (remplies en gris) */}
+                     <Bar yAxisId="kilogram" dataKey="kilogram" fill="#282D30" barSize={7} radius={[50, 50, 0, 0]}/>
+
+                     {/* Barres pour les calories (remplies en rouge) */}
                     <Bar yAxisId="calories" dataKey="calories" fill="#E60000" barSize={7} radius={[50, 50, 0, 0]}/>
+                    
                 </BarChart>
             </ResponsiveContainer>
         </div>
